@@ -1,5 +1,3 @@
 
 **hola mundo** \
 *hola*
-
-T
