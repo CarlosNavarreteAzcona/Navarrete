@@ -1,4 +1,6 @@
 # **Primer Documento con Github**
-## SemiTitulo 
-**Hola mundo** \
+
+## SemiTitulo
+
+**Hola mundo**
 *Aqui Carlos Navarrete*
