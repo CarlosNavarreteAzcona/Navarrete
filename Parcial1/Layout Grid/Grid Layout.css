@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    display: grid;
+
+    grid-template-columns: 10% 45% 45%;
+    grid-template-rows: 20% 70% 10%;
+
+    grid-template-areas: 'enca enca enca'
+                         'col1 col1 menulat'
+                         'col2 col2 menulat'
+                         'pie pie pie';
+
+    justify-content: stretch;
+    align-content: stretch;
+
+    grid-auto-flow: stretch;
+    justify-items: stretch;
+}
+
+.caja{
+    
+    background-color: green;
+    text-align: center;
+    border: 5px solid black;
+}
+
+#enca{grid-area: enca;}
+#menulat{grid-area: menulat;}
+#col1{grid-area: col1;}
+#col2{grid-area: col2;}
+#pie{grid-area: pie;}
+
+/*#caja1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}*/
+
