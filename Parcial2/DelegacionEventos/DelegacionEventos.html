@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0")>
+        <title>DelegacionEventos</title>
+        <link rel="stylesheet" href="DelegacionEventos.css">
+        
+    </head>
+    <body>
+        <div id="cont" class="contenedor">
+            <div id="caja1" class="caja">Caja 1</div>
+            <div id="caja2" class="caja">Caja 2</div>
+            <div id="caja3" class="caja">Caja 3</div>
+            <div id="caja4" class="caja">Caja 4</div>
+            <div id="caja5" class="caja">Caja 5</div>
+            <div id="caja6" class="caja">Caja 6</div>
+        </div>
+        <script>
+        window.onload=function()
+        {
+            var elem = document.getElementById("cont");
+            elem = addEventListener("click",contador);
+            function contador(evento){
+              event.target.innerhtml ="Evento de Delegacion"; 
+            }
+
+            document.getElementById("cont").addEventListener("click",contador);
+            function contador(evento){
+                event.target.innerhtml = "Evento de Delegacion";
+            }
+
+            document.getElementById("cont").addEventListener("click",function(event){
+                event.target.innerhtml = "Evento de Delegacion";
+            });
+
+            document.getElementById("cont").addEventListener("click",(event) => {
+                event.tarjet.innerhtml = "Evento de Delegacion";
+            });
+        }
+        </script>
+    </body>
+</html>
