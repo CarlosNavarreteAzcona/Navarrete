@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width,inicial-scale=1.0">
+        <title>ModuloNativo</title>
+        <script src="modulo.js"></script>
+    </head>
+    <body>
+        <label for="cad">Cadena</label>
+        <input id="cad" type="text">
+        <button id="btn">Procesar</button>
+        <input id="cadMay" type="text" disabled>
+    
+        <script type="module">
+            import{mayusculas,longitud} from "./modulo.js";
+            document.getElementById("btn").addEventListener("click",function(){
+                let valor = document.getElementById("cad").value;
+                let valorM = mayusculas(valor);
+                document.getElementById("cadMay").value = valorM;
+            })
+        </script>
+    
+        <script type="module">
+        import * as funciones from "./modulo.js";
+        document.getElementById("btn").addEventListener("click",function(){
+            let valor = document.getElementById("cad").value;
+            let valorM = funciones.mayusculas(valor);
+            document.getElementById("cadMay").value = valorM;
+        })
+        </script>
+    
+        <script>
+        document.getElementById("btn").addEventListener("click",function(){
+            import("./modulo.js")
+            .then(function(funciones){ 
+            let valor = document.getElementById("cad").value;
+            let valorM = funciones.mayusculas(valor);
+            document.getElementById("cadMay").value = valorM;
+        })
+        })
+        </script>    
+    </body>
+</html>
