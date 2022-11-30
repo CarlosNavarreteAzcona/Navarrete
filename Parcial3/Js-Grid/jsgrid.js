@@ -2,7 +2,7 @@ $(document).ready(function() {
   const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://localhost/Navarrete/Parcial3/Js-Grid/Registro.php",
+  "url": "http://localhost/lagoshilario/Parcial3/Grid%20copy/conexion.php",
   "method": "GET",
   "headers": {
     "Accept": "*/*",
