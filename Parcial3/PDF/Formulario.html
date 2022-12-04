@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0")>
+        <title>Sesion</title>        
+    </head>
+    <body>
+        <form name = "Formulario" id="form" method="post">
+            <label for="Nombre">Nombre: </label>
+            <input id="Nombre" type="text" name="Nombre">
+
+            <label for="Apellido">Apellido: </label>
+            <input id="Apellido" type="text" name="Apellido">
+
+            <label for="Curp">Curp: </label>
+            <input id="Curp" type="text" name="Curp">
+
+            <input id="btn" type="button" value="Crear PDF">
+        </form>
+        <script>
+            document.getElementById("btn").addEventListener("click", async() => {
+                const form = new FormData(document.getElementById('form'));
+                const results = await fetch ('CrearPDF.php',{
+                    method:'POST',
+                    body: form
+                })
+
+                let data = await results.blob()
+                console.log(data)
+                let archivo  = URL.createObjectURL(data) 
+                window.open(archivo)
+            })
+        </script>
+    </body>
+</html>
